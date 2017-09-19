@@ -1,4 +1,11 @@
 {
+  "knex": {
+    "connection": "DATABASE_URL"
+  },
+  "redis": {
+    "url": "REDIS_URL",
+    "secret": "REDIS_SECRET"
+  },
   "passport": {
     "Google": {
       "clientID": "GOOGLE_CLIENT_ID",
@@ -16,6 +23,18 @@
       "consumerKey": "TWITTER_CLIENT_ID",
       "consumerSecret": "TWITTER_CLIENT_SECRET",
       "callbackURL": "TWITTER_CALLBACK_URL"
+    },
+
+    "LinkedIn": {
+      "consumerKey": "LINKEDIN_CLIENT_ID",
+      "consumerSecret": "LINKEDIN_CLIENT_SECRET",
+      "callbackURL": "LINKEDIN_CALLBACK_URL"
     }
+  },
+
+  "stream": {
+    "streamKey": "STREAM_KEY",
+    "streamSecret": "STREAM_SECRET",
+    "streamId": "STREAM_ID"
   }
 }

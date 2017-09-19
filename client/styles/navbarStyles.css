@@ -1,0 +1,38 @@
+.navbar {
+
+}
+
+.brand {
+ background-image: url('/assets/logo_overflow.png');
+ display: inline-block;
+ width: 50px;
+ height: 56px;
+ margin: 5px 5px;
+}
+
+.logo {
+  align-items: center;
+  font-size: x-large;
+  margin: 20px 20px auto 10px;
+  line-height: 36px;
+ }
+
+.hidden {
+  transform: translateY(-100%);
+  transition: .5s ease-in-out;
+}
+
+.displayed {
+  transform: translateY(0%);
+  transition: .5s ease-in-out;
+}
+
+.profileButton {
+  border: transparent;
+  background: transparent;
+  padding: 0px;
+}
+
+.profileDropdown {
+  padding: 8px;
+}

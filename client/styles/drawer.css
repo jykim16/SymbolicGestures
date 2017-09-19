@@ -1,0 +1,152 @@
+.drawer {
+  padding: 15px;
+  color: #00bcd4;
+  display: flex;
+  flex-direction: column;
+  /*Change below to change the background/txt of all header colors.*/
+  --headers-bg-color: #4d7198;
+  --headers-txt-color: white;
+}
+
+.application {
+  text-align: center;
+  margin: 5px;
+  margin-top: 0px;
+  /*padding-top: 0px;*/
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 30%;
+}
+
+
+.applicationInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.applicationInfo .appInfo_col_1, .applicationInfo .appInfo_col_2{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.jobLinkRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.jobLinkRow i {
+  color:grey;
+  margin-top: 15px;
+}
+
+.jobLinkRow i:hover {
+  color:black;
+  cursor: pointer;
+}
+
+.jobLinkRow .tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.jobLinkRow .tooltip .tooltiptext {
+    /*visibility: hidden;
+    width: 120px;
+    background-color: var(--headers-bg-color);
+    color: var(--headers-txt-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 80%;
+    left: 30%;
+    margin-left: -60px;*/
+    visibility: hidden;
+    padding: 5px;
+    /* width: 120px; */
+    background-color: transparent;
+    color: var(--headers-bg-color);
+    text-align: center;
+    border-radius: 6px;
+    /* padding: 5px 0; */
+    position: absolute;
+    z-index: 1;
+    bottom: 53%;
+    left: 70%;
+}
+
+/*.jobLinkRow .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--headers-bg-color) transparent transparent transparent;
+}*/
+
+.jobLinkRow .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+
+.stageSelection {
+  display: flex;
+  margin-right: 0px;
+}
+
+.notes {
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  margin-top: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 60%;
+  align-self: flex-start;
+}
+
+.contacts {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  text-align: center;
+  width: 35%;
+  margin-top: 10px;
+  align-self: flex-start;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.contactInfo {
+  padding: 5px;
+}
+
+.notesAndContacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.notes h1, .contacts h1 {
+  background: var(--headers-bg-color);
+  color: var(--headers-txt-color);
+  margin-bottom: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.application h1 {
+  background: var(--headers-bg-color);
+  color: var(--headers-txt-color);
+  margin-bottom: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}

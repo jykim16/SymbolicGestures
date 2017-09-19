@@ -1,0 +1,54 @@
+.stageBar {
+
+}
+
+.stageBar ul {
+  display:flex;
+  flex-direction: row;
+  list-style-type: none;
+  width: 100%;
+  height: inherit;
+  min-height: 50px;
+  max-height: 50px;
+  padding-left: 0px;
+}
+
+.stageBar li {
+  flex-grow:1;
+  text-align: center;
+  min-width: 20px;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+.addStage {
+  padding: 5px;
+  color: white;
+  text-align: center;
+  background-color: rgb(0, 188, 212);;
+}
+
+.addStage:hover {
+  opacity: .7;
+  content: '+'
+}
+
+.settings {
+  color: white;
+  position: absolute;
+  visibility:hidden;
+}
+
+.settings i{
+  visibility: hidden;
+}
+
+.settingsColorPickers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.settingsDelete {
+  color: red;
+}

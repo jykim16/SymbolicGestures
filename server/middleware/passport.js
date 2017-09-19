@@ -4,6 +4,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const TwitterStrategy = require('passport-twitter').Strategy;
+const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 const config = require('config')['passport'];
 const models = require('../../db/models');
 
@@ -118,9 +119,14 @@ passport.use('facebook', new FacebookStrategy({
   clientID: config.Facebook.clientID,
   clientSecret: config.Facebook.clientSecret,
   callbackURL: config.Facebook.callbackURL,
-  profileFields: ['id', 'emails', 'name']
+  profileFields: ['id', 'emails', 'name', 'picture', 'displayName']
 },
+<<<<<<< HEAD
 (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('facebook', profile, done))
+=======
+(accessToken, refreshToken, profile, done) => {
+  return getOrCreateOAuthProfile('facebook', profile, done)})
+>>>>>>> a2aa01ad2636019993ab18298d238d35d4814138
 );
 
 // REQUIRES PERMISSIONS FROM TWITTER TO OBTAIN USER EMAIL ADDRESSES
@@ -131,6 +137,17 @@ passport.use('twitter', new TwitterStrategy({
   userProfileURL: 'https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true'
 },
 (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('twitter', profile, done))
+<<<<<<< HEAD
+=======
+);
+
+passport.use('linkedin', new LinkedInStrategy({
+  clientID: config.LinkedIn.consumerKey,
+  clientSecret: config.LinkedIn.consumerSecret,
+  callbackURL: config.LinkedIn.callbackURL,
+  scope: ['r_emailaddress', 'r_basicprofile']
+},(accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('linkedin', profile, done))
+>>>>>>> a2aa01ad2636019993ab18298d238d35d4814138
 );
 
 const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
@@ -138,7 +155,6 @@ const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
     withRelated: ['profile']
   })
     .then(oauthAccount => {
-
       if (oauthAccount) {
         throw oauthAccount;
       }
@@ -150,12 +166,13 @@ const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
       return models.Profile.where({ email: oauthProfile.emails[0].value }).fetch();
     })
     .then(profile => {
-
+      console.log(oauthProfile)
       let profileInfo = {
         first: oauthProfile.name.givenName,
         last: oauthProfile.name.familyName,
         display: oauthProfile.displayName || `${oauthProfile.name.givenName} ${oauthProfile.name.familyName}`,
-        email: oauthProfile.emails[0].value
+        email: oauthProfile.emails[0].value,
+        image_link: oauthProfile.photos[0].value
       };
 
       if (profile) {

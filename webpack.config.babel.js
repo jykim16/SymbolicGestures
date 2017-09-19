@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 
 const config = {
-  entry: './client/src/app',
+  entry: './client/src/app.jsx',
   output: {
     path: path.join(__dirname, 'public/dist'),
     filename: 'bundle.js'
@@ -19,6 +19,17 @@ const config = {
             }
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader'
+      }, {
+        test: /\.css$/,
+        loader: 'css-loader',
+        query: {
+          modules: true,
+          localIdentName: '[name]__[local]___[hash:base64:5]'
+        }
       }
     ]
   }

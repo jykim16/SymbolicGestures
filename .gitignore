@@ -3,6 +3,7 @@ config/development.json
 config/production.json
 config/staging.json
 config/test.json
+config/migrateShortCut.js
 
 # OS X
 .DS_Store
@@ -35,3 +36,7 @@ dist/
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules/
 bower_components/
+
+# I(Sean) am ignoring below file because I want to create my own rule for eslint
+
+.eslintrc.js
